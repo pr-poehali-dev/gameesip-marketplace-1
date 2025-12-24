@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Marketplace from "./pages/Marketplace";
 import Profile from "./pages/Profile";
 import Support from "./pages/Support";
+import CreateListing from "./pages/CreateListing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/create-listing" element={<CreateListing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Link } from 'react-router-dom';
 
 const games = ['CS:GO', 'Dota 2', 'Valorant', 'Fortnite', 'PUBG', 'Apex Legends'];
 const categories = ['Скины', 'Аккаунты', 'Валюта', 'Предметы', 'Услуги'];
@@ -66,10 +67,12 @@ export default function Marketplace() {
           <p className="text-muted-foreground mb-6">
             Пользователи начнут выставлять товары на продажу
           </p>
-          <Button size="lg" className="hover-glow">
-            <Icon name="Plus" className="mr-2" size={20} />
-            Выставить первый товар
-          </Button>
+          <Link to="/create-listing">
+            <Button size="lg" className="hover-glow">
+              <Icon name="Plus" className="mr-2" size={20} />
+              Выставить первый товар
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

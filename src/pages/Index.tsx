@@ -66,7 +66,7 @@ export default function Index() {
                 Перейти к покупкам
               </Button>
             </Link>
-            <Link to="/profile">
+            <Link to="/create-listing">
               <Button size="lg" variant="outline" className="text-lg px-8">
                 <Icon name="Plus" size={20} className="mr-2" />
                 Продать товар

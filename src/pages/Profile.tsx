@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
   return (
@@ -70,10 +71,12 @@ export default function Profile() {
               <p className="text-muted-foreground mb-6">
                 Начните продавать игровые предметы
               </p>
-              <Button className="hover-glow">
-                <Icon name="Plus" size={18} className="mr-2" />
-                Добавить товар
-              </Button>
+              <Link to="/create-listing">
+                <Button className="hover-glow">
+                  <Icon name="Plus" size={18} className="mr-2" />
+                  Добавить товар
+                </Button>
+              </Link>
             </Card>
           </TabsContent>
 
