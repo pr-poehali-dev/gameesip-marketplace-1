@@ -10,6 +10,7 @@ import Marketplace from "./pages/Marketplace";
 import Profile from "./pages/Profile";
 import Support from "./pages/Support";
 import CreateListing from "./pages/CreateListing";
+import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/profile" element={<Profile />} />
           <Route path="/support" element={<Support />} />
           <Route path="/create-listing" element={<CreateListing />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

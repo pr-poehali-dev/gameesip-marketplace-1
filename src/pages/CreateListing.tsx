@@ -10,7 +10,21 @@ import { Switch } from '@/components/ui/switch';
 import Icon from '@/components/ui/icon';
 import { toast } from 'sonner';
 
-const games = ['CS:GO', 'Dota 2', 'Valorant', 'Fortnite', 'PUBG', 'Apex Legends', 'League of Legends', 'Minecraft'];
+const pcGames = [
+  'CS:GO', 'Dota 2', 'Valorant', 'League of Legends', 'Minecraft', 
+  'World of Warcraft', 'Overwatch 2', 'Apex Legends', 'PUBG', 
+  'Rust', 'GTA V', 'Dead by Daylight', 'Rainbow Six Siege',
+  'Warframe', 'Path of Exile', 'Lost Ark', 'Escape from Tarkov'
+];
+
+const mobileGames = [
+  'PUBG Mobile', 'Call of Duty Mobile', 'Fortnite', 'Genshin Impact',
+  'Mobile Legends', 'Clash of Clans', 'Clash Royale', 'Brawl Stars',
+  'Free Fire', 'Among Us', 'Standoff 2', 'Pokemon GO'
+];
+
+const games = [...pcGames, ...mobileGames];
+
 const itemTypes = ['Скин', 'Аккаунт', 'Валюта', 'Предмет', 'Услуга', 'Прочее'];
 
 const gameCategories: Record<string, string[]> = {
@@ -19,9 +33,14 @@ const gameCategories: Record<string, string[]> = {
   'Valorant': ['Оружие', 'Ножи', 'Баддики', 'Банеры', 'Спреи', 'Аккаунты'],
   'Fortnite': ['Скины', 'Пикаксы', 'Планеры', 'Эмоции', 'Аккаунты'],
   'PUBG': ['Одежда', 'Оружие', 'Транспорт', 'Аккаунты'],
+  'PUBG Mobile': ['Одежда', 'Оружие', 'UC', 'Аккаунты'],
   'Apex Legends': ['Скины легенд', 'Оружие', 'Баннеры', 'Аккаунты'],
   'League of Legends': ['Чемпионы', 'Скины', 'Варды', 'Аккаунты'],
-  'Minecraft': ['Аккаунты', 'Предметы', 'Сервера', 'Плагины']
+  'Minecraft': ['Аккаунты', 'Предметы', 'Сервера', 'Плагины'],
+  'Mobile Legends': ['Скины', 'Герои', 'Diamonds', 'Аккаунты'],
+  'Genshin Impact': ['Персонажи', 'Оружие', 'Кристаллы', 'Аккаунты'],
+  'Call of Duty Mobile': ['Скины', 'Оружие', 'CP', 'Аккаунты'],
+  'Free Fire': ['Скины', 'Оружие', 'Diamonds', 'Аккаунты']
 };
 
 export default function CreateListing() {
@@ -83,7 +102,16 @@ export default function CreateListing() {
                     <SelectValue placeholder="Выберите игру" />
                   </SelectTrigger>
                   <SelectContent>
-                    {games.map(game => (
+                    <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">
+                      Компьютерные игры
+                    </div>
+                    {pcGames.map(game => (
+                      <SelectItem key={game} value={game}>{game}</SelectItem>
+                    ))}
+                    <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground mt-2 border-t">
+                      Мобильные игры
+                    </div>
+                    {mobileGames.map(game => (
                       <SelectItem key={game} value={game}>{game}</SelectItem>
                     ))}
                   </SelectContent>

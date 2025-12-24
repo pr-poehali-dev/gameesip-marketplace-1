@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "Test OPTIONS for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Test create deposit payment",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "create_deposit",
+        "user_id": 1,
+        "amount": 500
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "payment_url": "string",
+        "payment_id": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
